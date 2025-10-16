@@ -29,13 +29,13 @@ with DAG(
 
     create_table = SQLExecuteQueryOperator(
         task_id='create_table',
-        conn_id='postgres_render',  # <-- Use 'conn_id'
+        conn_id='postgress_render',  # <-- Use 'conn_id'
         sql=create_table_sql,
     )
 
     drop_table = SQLExecuteQueryOperator(
         task_id='drop_table',
-        conn_id='postgres_render',  # <-- Use 'conn_id'
+        conn_id='postgress_render',  # <-- Use 'conn_id'
         sql=drop_table_sql,
     )
 

@@ -9,7 +9,7 @@ default_args = {
 }
 
 with DAG(
-    'create_drop_postgres_table_test',
+    'create_drop_postgres_table_test1',
     default_args=default_args,
     description='A simple DAG to create and drop PostgreSQL table',
     schedule=None,

@@ -1,7 +1,7 @@
 from airflow import DAG
 #from airflow.providers.postgres.operators.postgres import PostgresOperator
 #from airflow.providers.postgres.operators.sql import SQLExecuteQueryOperator
-from airflow.providers.common.sql.operators.sql.SQLExecuteQueryOperator import SQLExecuteQueryOperator
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from datetime import datetime, timedelta  # <-- Correct import
 
 # Define the default arguments for the DAG

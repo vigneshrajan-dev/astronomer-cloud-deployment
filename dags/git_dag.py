@@ -1,7 +1,6 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from datetime import datetime, timedelta  # <-- Use datetime here
-from datetime import timedelta  # <-- Add this import
+from datetime import datetime, timedelta  # <-- Only one import needed
 
 default_args = {
     'owner': 'airflow',
@@ -14,7 +13,7 @@ with DAG(
     default_args=default_args,
     description='A simple DAG deployed via GitHub integration',
     schedule_interval='@daily',
-    start_date=datetime(1),
+    start_date=datetime.now() - timedelta(days=1),  # <-- Use a valid start date
     catchup=False,
 ) as dag:
 
@@ -28,4 +27,4 @@ with DAG(
         bash_command='echo "Goodbye from Astro Cloud deployment!"',
     )
 
-    hello_task >> goodbye_task  # <-- Fix typo here
+    hello_task >> goodbye_task

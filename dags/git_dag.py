@@ -12,7 +12,7 @@ with DAG(
     'git_deployment_example',
     default_args=default_args,
     description='A simple DAG deployed via GitHub integration',
-    schedule_interval='@daily',
+    schedule='@daily',
     start_date=datetime.now() - timedelta(days=1),  # <-- Use a valid start date
     catchup=False,
 ) as dag:

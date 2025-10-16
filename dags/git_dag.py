@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from airflow.utils.dates import days_ago
+from datetime import datetime, timedelta  # <-- Use datetime here
 from datetime import timedelta  # <-- Add this import
 
 default_args = {
@@ -14,7 +14,7 @@ with DAG(
     default_args=default_args,
     description='A simple DAG deployed via GitHub integration',
     schedule_interval='@daily',
-    start_date=days_ago(1),
+    start_date=datetime(1),
     catchup=False,
 ) as dag:
 

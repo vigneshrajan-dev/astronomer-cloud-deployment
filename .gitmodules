@@ -1,0 +1,3 @@
+[submodule "astronomer-training"]
+	path = astronomer-training
+	url = https://github.com/vigneshrajan-dev/astronomer-cloud-deployment.git
